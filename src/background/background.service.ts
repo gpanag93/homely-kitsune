@@ -1,6 +1,6 @@
 // background.service.ts
 import { Injectable, Logger, OnApplicationBootstrap, OnApplicationShutdown } from '@nestjs/common';
-import { KamernetService } from '../scraper/kamernet.service';
+import { KamernetScrapingService } from '../scraper/kamernet.service';
 import { ClassificationService } from '../classification/classification.service';
 import { EmailService } from '../email/email.service';
 import { ErrorBufferService } from '../monitoring/error-buffer.service';
@@ -14,7 +14,7 @@ export class BackgroundService implements OnApplicationBootstrap, OnApplicationS
   private readonly timeEnd: number;
 
   constructor(
-    private readonly kamernetService: KamernetService,
+    private readonly kamernetScrapingService: KamernetScrapingService,
     private readonly classificationService: ClassificationService,
     private readonly emailService: EmailService,
     private readonly errorBuffer: ErrorBufferService,
@@ -45,7 +45,7 @@ export class BackgroundService implements OnApplicationBootstrap, OnApplicationS
         try {
           this.logger.log('Running scheduled job...');
 
-          await this.kamernetService.scrape();
+          await this.kamernetScrapingService.scrape();
           await this.classificationService.classify();
           await this.emailService.sendNotificationEmail();
 

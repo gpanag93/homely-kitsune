@@ -11,8 +11,8 @@ import { ErrorBufferService } from '../monitoring/error-buffer.service';
 
 
 @Injectable()
-export class KamernetService {
-    private readonly logger = new Logger(KamernetService.name);
+export class KamernetScrapingService {
+    private readonly logger = new Logger(KamernetScrapingService.name);
     private readonly AUTH_PATH = join(process.cwd(), 'auth', 'kamernet-auth.json');
     
     private readonly emailLogin = process.env.KAMERNET_EMAIL ?? (() => { throw new Error('KAMERNET_EMAIL is missing'); })();
@@ -312,7 +312,7 @@ export class KamernetService {
         };
       } catch (err) {
         this.logger.error(`Error scraping link ${link}`, err);
-        captureAndLogError(this.logger, this.errorBuffer, 'KamernetService', err, `Error scraping link: ${link}`);
+        captureAndLogError(this.logger, this.errorBuffer, 'KamernetScrapingService', err, `Error scraping link: ${link}`);
         return {};
       }
     }
