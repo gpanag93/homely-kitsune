@@ -1,0 +1,367 @@
+{
+  "cookies": [
+    {
+      "name": "_GRECAPTCHA",
+      "value": "09ANMylNCR1RQSOVFK0rwSh_3WvQFAIMKujfVLkmzMaiLyA0ZA0SYD853oqLNEFmiN5VpdLGD38KkWtV5tL3cpGGI",
+      "domain": "www.google.com",
+      "path": "/recaptcha",
+      "expires": 1768618853.966832,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ha_anonymous_id",
+      "value": "5fa82edd-b091-4d57-bf04-00d428ef3692",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": 1784602854.005743,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ASP.NET_SessionId",
+      "value": "imvwlhoblwwu3purh5eospf0",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "kn-mp-source",
+      "value": "Direct",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": 1755658848,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_hjSessionUser_1248238",
+      "value": "eyJpZCI6IjgyMjZhOGNlLWViZmQtNTZiZS05OTVmLTBiMWU2MmEwODFkZCIsImNyZWF0ZWQiOjE3NTMwNjY4NDkxMjgsImV4aXN0aW5nIjp0cnVlfQ==",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602855,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_hjSession_1248238",
+      "value": "eyJpZCI6ImIzOWVjMWM4LWE2ZDUtNDY2Yi1hNGViLWYwNWUzMmVjNzlmNCIsImMiOjE3NTMwNjY4NDkxMzAsInMiOjEsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1753068649,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "rl_anonymous_id",
+      "value": "RS_ENC_v3_IjNkZjU5YmI3LThhNGUtNGUyOC05ZjMzLWZiYjMyMmU4YmNlYSI%3D",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602855,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "rl_page_init_referrer",
+      "value": "RS_ENC_v3_Imh0dHBzOi8va2FtZXJuZXQubmwvIg%3D%3D",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602855,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "rl_page_init_referring_domain",
+      "value": "RS_ENC_v3_ImthbWVybmV0Lm5sIg%3D%3D",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602855,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mp_a35ca7b30180789f75ad8610d4a9c8a4_mixpanel",
+      "value": "%7B%22distinct_id%22%3A%22%24device%3A0923705e-8254-425d-9ccd-45014dadf4ae%22%2C%22%24device_id%22%3A%220923705e-8254-425d-9ccd-45014dadf4ae%22%2C%22mp_lib%22%3A%22Rudderstack%3A%20web%22%2C%22%24initial_referrer%22%3A%22https%3A%2F%2Fkamernet.nl%2F%22%2C%22%24initial_referring_domain%22%3A%22kamernet.nl%22%2C%22__mps%22%3A%7B%7D%2C%22__mpso%22%3A%7B%22%24initial_referrer%22%3A%22https%3A%2F%2Fkamernet.nl%2F%22%2C%22%24initial_referring_domain%22%3A%22kamernet.nl%22%7D%2C%22__mpus%22%3A%7B%7D%2C%22__mpa%22%3A%7B%7D%2C%22__mpu%22%3A%7B%7D%2C%22__mpr%22%3A%5B%5D%2C%22__mpap%22%3A%5B%5D%7D",
+      "domain": "id.kamernet.nl",
+      "path": "/",
+      "expires": 1784602850,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.2.374792282.1753066850",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1787626850.379116,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gid",
+      "value": "GA1.2.819283466.1753066850",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1753153250,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gat_gtag_UA_9054138_5",
+      "value": "1",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1753066910,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gat_gtag_UA_9054138_1",
+      "value": "1",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1753066910,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__Host-idp_useragent",
+      "value": "MTc1MzA2Njg1NHxmdnZ4YkNSRndpR0I2alZxbGR6eTJBV3ZtbjVZNWV4emFpVzBGbUx5Q2xud1hQdl9sNmpVYmhpcEZiNG8xekt0OGM0YmxfWG5BS09JRjVjUWNKY1RLdEdnNFcwekNUTm1TTnp1T0ZDRjVlWVFGXzVORUhzdTRnPT18LLbfV8gdmm7060Tv-5ahh2Lbx5C1O1zDs_79K0QJdqM=",
+      "domain": "id.kamernet.nl",
+      "path": "/",
+      "expires": 1784602854.31705,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__ha_at",
+      "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjUxOWU1N2I3LTUwYjEtNGVkOS1iYjhlLWJhNTc2YTY5NDYzOC5wZW0iLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiaGEtcGxhdGZvcm0iLCJrYW1lcm5ldC13ZWIiXSwiY2xpZW50X2lkIjoia2FtZXJuZXQtd2ViIiwiZXhwIjoxNzUzMDY3NzU0LCJpYXQiOjE3NTMwNjY4NTEsImlzcyI6Imh0dHBzOi8vaWQua2FtZXJuZXQubmwiLCJqdGkiOiI3ZWIzMWFmYS05NjRmLTRjY2MtYjVhNC02ODIzOWYyNjFkNWQiLCJuYmYiOjE3NTMwNjY4NTEsInNjb3BlIjoib3BlbmlkIG9mZmxpbmVfYWNjZXNzIHVybjpoYTppYW06dXNlcjptZXRhZGF0YTpoYXVzZXJpZCIsInN1YiI6IjEyMzE1OTVmLTk4NWQtNDdlNS1iZjc3LTkwMDdmYzg1N2Y3YSIsInVybjpoYTppYW06dXNlcjptZXRhZGF0YTpoYXVzZXJpZCI6MH0.Zrs3L8B1onv3M4nSMlDWILih1K430USp8gWqhH4BhX6kvoE8i0tzsxsH_uoq2edUdKVsm72IiNhq6E6ncpKMmovqgaAiuPm4gUvqftxtERCJ6pyYCx8yuUMpn1ilstcF4Wo7nhQBQawpVoaTABpkAci_E7gBblL64SDS02dc9GUGkF749Ks16dBWe7nC2PgH7RzISshxDAJnDXDa6v-dAgyC4xU6B-OBTuhpkgq1cqzRYyC6R6nrEFHaXdntcuXNNkVKYqkhUPLmYnotwXbembKs-ZFtDc-rc0QreStLo-Bg_wbjzjN62PpgxsAP6L2b__wumgsBj3V99u-s0yOQ3t0HgXq6xyOqEuIysasdXU9gz3Dpp99DorxPw-9MkSZEH_aUeNB39wX7QuJcyqjzMAegy99FaElQbQUzWJJfuFvNlEdMgheKMclToz4ZYpQ6djZiYeVN3t5_Z9k1cDJyZF7K3SM6v-ZcpAFAFlo_DD0cuNmC5KH3Jc2tRUdcyoxohKQFJvE9a_9ubPNcI6kRPgsEwoIQzRDLOYIwQbEpG_e9KWL7bhREnUfMJMfiaQ26jpAwvdtKueybc8oS6QgtxK7CyILLRa5fdQKF4fFdwYbZp0Jhy4cE0T3ihr5AH93I5Xz_VBWCFOo0WZj5nXnsvZPWMjw2s0lgtRapRjMZQiY",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": 1753067739.662655,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__ha_rt",
+      "value": "akJyQp4AOaVIXh18oT0s8Hme9RlDfj4w99DGxs4ZvgajG2hOoDSQHN3-zvaGN1liR-XowsV4O8oi-Q6sY7f1Sh7R9n5Vu29CrOGbOugE0kAewR9bRH4ZNWokJdGOocw3KxBG6HDPOD_BWaNOlk7SEzN70pGbWfp07qTh9Rb0",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": 1755658854.662821,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_Policy",
+      "value": "7",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "USER_EMAIL",
+      "value": "",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": 1755745194.005886,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "logonUser",
+      "value": "S0wqb6XqQDbz4yaDo5yAiWok8ItBbX73MYlnaQ3J4DQGsMYtBbyj2A-uf9K76PcjcY3E-mGrCku48IG9RM_V9LKuznnbKeu2rjydAdXy5F3MoZdz5hWQvBaVTJ3jA_EmWc5RiBvumMIR2TNOJC_lyPSLqpkKvRnAu1nSVmkaAjse6qOkRqvDmWsHGLCIbv8QhmBSRCSDgFMSHlt5AzCc_V2TwYMq_Vzh-tmX5CKE4bamLf9zM8kob1gdAC-p2zOW0nDE5HVjJeD5SYoLcvl20A2",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mp_a35ca7b30180789f75ad8610d4a9c8a4_mixpanel",
+      "value": "%7B%22distinct_id%22%3A%22u6107847%22%2C%22%24device_id%22%3A%22bea2dccf-f857-486c-a24c-3368aa937bce%22%2C%22mp_lib%22%3A%22Rudderstack%3A%20web%22%2C%22%24initial_referrer%22%3A%22https%3A%2F%2Fid.kamernet.nl%2F%22%2C%22%24initial_referring_domain%22%3A%22id.kamernet.nl%22%2C%22__mps%22%3A%7B%7D%2C%22__mpso%22%3A%7B%7D%2C%22__mpus%22%3A%7B%7D%2C%22__mpa%22%3A%7B%7D%2C%22__mpu%22%3A%7B%7D%2C%22__mpr%22%3A%5B%5D%2C%22__mpap%22%3A%5B%5D%2C%22%24user_id%22%3A%22u6107847%22%2C%22source%22%3A%22Direct%22%2C%22currentSource%22%3A%22Direct%22%2C%22path%22%3A%22%2Fen%22%7D",
+      "domain": "kamernet.nl",
+      "path": "/",
+      "expires": 1784602855,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "rl_trait",
+      "value": "RS_ENC_v3_eyJzb3VyY2UiOiJEaXJlY3QiLCJjdXJyZW50U291cmNlIjoiRGlyZWN0IiwicGF0aCI6Ii9lbiJ9",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602855,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "rl_user_id",
+      "value": "RS_ENC_v3_InU2MTA3ODQ3Ig%3D%3D",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602856,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "rl_session",
+      "value": "RS_ENC_v3_eyJpZCI6MTc1MzA2Njg0OTkzNywiZXhwaXJlc0F0IjoxNzUzMDY4NjU1OTg3LCJ0aW1lb3V0IjoxODAwMDAwLCJhdXRvVHJhY2siOnRydWUsInNlc3Npb25TdGFydCI6ZmFsc2V9",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602856,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "OptanonAlertBoxClosed",
+      "value": "2025-07-21T03:00:56.067Z",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602856,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_12G9JSB0C6",
+      "value": "GS2.1.s1753066850$o1$g1$t1753066856$j60$l0$h0",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1787626856.096584,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "OptanonConsent",
+      "value": "isGpcEnabled=0&datestamp=Mon+Jul+21+2025+05%3A00%3A56+GMT%2B0200+(Central+European+Summer+Time)&version=202402.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=19aff50c-7cb7-4bec-b40f-85127abcc8c6&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0004%3A1",
+      "domain": ".kamernet.nl",
+      "path": "/",
+      "expires": 1784602856,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://kamernet.nl",
+      "localStorage": [
+        {
+          "name": "__mpq_a35ca7b30180789f75ad8610d4a9c8a4_ev:Y",
+          "value": "1753066855976|0.6995082932011256"
+        },
+        {
+          "name": "rudder_2Asolrw3BDcuq2ThOwSad88MJEY.35f9b465-768c-4911-a2e9-04da0f211790.queue",
+          "value": "\"[]\""
+        },
+        {
+          "name": "rudder_2Asolrw3BDcuq2ThOwSad88MJEY.35f9b465-768c-4911-a2e9-04da0f211790.inProgress",
+          "value": "\"{\\\"1e33b80b-cef6-4d87-8315-b599bafe75ad\\\":{\\\"item\\\":{\\\"url\\\":\\\"https://events.analytics.hatech.dev/v1/track\\\",\\\"headers\\\":{\\\"AnonymousId\\\":\\\"M2RmNTliYjctOGE0ZS00ZTI4LTlmMzMtZmJiMzIyZThiY2Vh\\\"},\\\"event\\\":{\\\"properties\\\":{\\\"Experiment name\\\":\\\"Subscribe CTA in Menu\\\",\\\"variant\\\":\\\"B\\\"},\\\"event\\\":\\\"Experiment started\\\",\\\"type\\\":\\\"track\\\",\\\"channel\\\":\\\"web\\\",\\\"context\\\":{\\\"traits\\\":{},\\\"sessionId\\\":1753066849937,\\\"consentManagement\\\":{\\\"deniedConsentIds\\\":[\\\"C0002\\\",\\\"C0003\\\",\\\"C0004\\\",\\\"C0005\\\"],\\\"allowedConsentIds\\\":[\\\"C0001\\\"],\\\"provider\\\":\\\"oneTrust\\\",\\\"resolutionStrategy\\\":\\\"and\\\"},\\\"app\\\":{\\\"name\\\":\\\"RudderLabs JavaScript SDK\\\",\\\"namespace\\\":\\\"com.rudderlabs.javascript\\\",\\\"version\\\":\\\"3.11.13\\\",\\\"installType\\\":\\\"npm\\\"},\\\"library\\\":{\\\"name\\\":\\\"RudderLabs JavaScript SDK\\\",\\\"version\\\":\\\"3.11.13\\\"},\\\"userAgent\\\":\\\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\\\",\\\"os\\\":{\\\"name\\\":\\\"\\\",\\\"version\\\":\\\"\\\"},\\\"locale\\\":\\\"en-US\\\",\\\"screen\\\":{\\\"width\\\":1280,\\\"height\\\":720,\\\"density\\\":1,\\\"innerWidth\\\":1280,\\\"innerHeight\\\":720},\\\"campaign\\\":{},\\\"page\\\":{\\\"path\\\":\\\"/en\\\",\\\"referrer\\\":\\\"https://id.kamernet.nl/\\\",\\\"referring_domain\\\":\\\"id.kamernet.nl\\\",\\\"search\\\":\\\"?signedin=true\\\",\\\"title\\\":\\\"Rent a room, apartment or studio | Kamernet\\\",\\\"url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"tab_url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"initial_referrer\\\":\\\"https://kamernet.nl/\\\",\\\"initial_referring_domain\\\":\\\"kamernet.nl\\\"},\\\"timezone\\\":\\\"GMT+0200\\\"},\\\"originalTimestamp\\\":\\\"2025-07-21T03:00:55.952Z\\\",\\\"messageId\\\":\\\"a0535ab2-3687-4fe1-961d-768153387c95\\\",\\\"userId\\\":\\\"\\\",\\\"anonymousId\\\":\\\"3df59bb7-8a4e-4e28-9f33-fbb322e8bcea\\\",\\\"integrations\\\":{\\\"Google Analytics 4 (GA4)\\\":{\\\"clientId\\\":\\\"1475957717.1753066856\\\",\\\"sessionId\\\":\\\"1753066855\\\",\\\"sessionNumber\\\":1},\\\"All\\\":true},\\\"sentAt\\\":\\\"2025-07-21T03:00:55.953Z\\\"}},\\\"attemptNumber\\\":0,\\\"time\\\":1753066855954,\\\"type\\\":\\\"Single\\\"},\\\"67fedd54-57cf-4a8c-89e9-1c12e33d5945\\\":{\\\"item\\\":{\\\"url\\\":\\\"https://events.analytics.hatech.dev/v1/identify\\\",\\\"headers\\\":{\\\"AnonymousId\\\":\\\"M2RmNTliYjctOGE0ZS00ZTI4LTlmMzMtZmJiMzIyZThiY2Vh\\\"},\\\"event\\\":{\\\"userId\\\":\\\"u6107847\\\",\\\"type\\\":\\\"identify\\\",\\\"context\\\":{\\\"traits\\\":{\\\"source\\\":\\\"Direct\\\",\\\"currentSource\\\":\\\"Direct\\\",\\\"path\\\":\\\"/en\\\"},\\\"sessionId\\\":1753066849937,\\\"consentManagement\\\":{\\\"deniedConsentIds\\\":[\\\"C0002\\\",\\\"C0003\\\",\\\"C0004\\\",\\\"C0005\\\"],\\\"allowedConsentIds\\\":[\\\"C0001\\\"],\\\"provider\\\":\\\"oneTrust\\\",\\\"resolutionStrategy\\\":\\\"and\\\"},\\\"app\\\":{\\\"name\\\":\\\"RudderLabs JavaScript SDK\\\",\\\"namespace\\\":\\\"com.rudderlabs.javascript\\\",\\\"version\\\":\\\"3.11.13\\\",\\\"installType\\\":\\\"npm\\\"},\\\"library\\\":{\\\"name\\\":\\\"RudderLabs JavaScript SDK\\\",\\\"version\\\":\\\"3.11.13\\\"},\\\"userAgent\\\":\\\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\\\",\\\"os\\\":{\\\"name\\\":\\\"\\\",\\\"version\\\":\\\"\\\"},\\\"locale\\\":\\\"en-US\\\",\\\"screen\\\":{\\\"width\\\":1280,\\\"height\\\":720,\\\"density\\\":1,\\\"innerWidth\\\":1280,\\\"innerHeight\\\":720},\\\"campaign\\\":{},\\\"page\\\":{\\\"path\\\":\\\"/en\\\",\\\"referrer\\\":\\\"https://id.kamernet.nl/\\\",\\\"referring_domain\\\":\\\"id.kamernet.nl\\\",\\\"search\\\":\\\"?signedin=true\\\",\\\"title\\\":\\\"Rent a room, apartment or studio | Kamernet\\\",\\\"url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"tab_url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"initial_referrer\\\":\\\"https://kamernet.nl/\\\",\\\"initial_referring_domain\\\":\\\"kamernet.nl\\\"},\\\"timezone\\\":\\\"GMT+0200\\\"},\\\"channel\\\":\\\"web\\\",\\\"originalTimestamp\\\":\\\"2025-07-21T03:00:55.965Z\\\",\\\"messageId\\\":\\\"b555bdb3-dc1a-4dca-af46-fd51e92816dc\\\",\\\"anonymousId\\\":\\\"3df59bb7-8a4e-4e28-9f33-fbb322e8bcea\\\",\\\"event\\\":null,\\\"properties\\\":null,\\\"integrations\\\":{\\\"Google Analytics 4 (GA4)\\\":{\\\"clientId\\\":\\\"1475957717.1753066856\\\",\\\"sessionId\\\":\\\"1753066855\\\",\\\"sessionNumber\\\":1},\\\"All\\\":true},\\\"sentAt\\\":\\\"2025-07-21T03:00:55.965Z\\\"}},\\\"attemptNumber\\\":0,\\\"time\\\":1753066855966,\\\"type\\\":\\\"Single\\\"},\\\"540b980c-b663-49cd-ae0e-7a2f21297a23\\\":{\\\"item\\\":{\\\"url\\\":\\\"https://events.analytics.hatech.dev/v1/track\\\",\\\"headers\\\":{\\\"AnonymousId\\\":\\\"M2RmNTliYjctOGE0ZS00ZTI4LTlmMzMtZmJiMzIyZThiY2Vh\\\"},\\\"event\\\":{\\\"properties\\\":{\\\"kamernetApp\\\":\\\"next\\\",\\\"language\\\":\\\"English\\\"},\\\"event\\\":\\\"PageViewed\\\",\\\"type\\\":\\\"track\\\",\\\"channel\\\":\\\"web\\\",\\\"context\\\":{\\\"traits\\\":{\\\"source\\\":\\\"Direct\\\",\\\"currentSource\\\":\\\"Direct\\\",\\\"path\\\":\\\"/en\\\"},\\\"sessionId\\\":1753066849937,\\\"consentManagement\\\":{\\\"deniedConsentIds\\\":[\\\"C0002\\\",\\\"C0003\\\",\\\"C0004\\\",\\\"C0005\\\"],\\\"allowedConsentIds\\\":[\\\"C0001\\\"],\\\"provider\\\":\\\"oneTrust\\\",\\\"resolutionStrategy\\\":\\\"and\\\"},\\\"app\\\":{\\\"name\\\":\\\"RudderLabs JavaScript SDK\\\",\\\"namespace\\\":\\\"com.rudderlabs.javascript\\\",\\\"version\\\":\\\"3.11.13\\\",\\\"installType\\\":\\\"npm\\\"},\\\"library\\\":{\\\"name\\\":\\\"RudderLabs JavaScript SDK\\\",\\\"version\\\":\\\"3.11.13\\\"},\\\"userAgent\\\":\\\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\\\",\\\"os\\\":{\\\"name\\\":\\\"\\\",\\\"version\\\":\\\"\\\"},\\\"locale\\\":\\\"en-US\\\",\\\"screen\\\":{\\\"width\\\":1280,\\\"height\\\":720,\\\"density\\\":1,\\\"innerWidth\\\":1280,\\\"innerHeight\\\":720},\\\"campaign\\\":{},\\\"page\\\":{\\\"path\\\":\\\"/en\\\",\\\"referrer\\\":\\\"https://id.kamernet.nl/\\\",\\\"referring_domain\\\":\\\"id.kamernet.nl\\\",\\\"search\\\":\\\"?signedin=true\\\",\\\"title\\\":\\\"Rent a room, apartment or studio | Kamernet\\\",\\\"url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"tab_url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"initial_referrer\\\":\\\"https://kamernet.nl/\\\",\\\"initial_referring_domain\\\":\\\"kamernet.nl\\\"},\\\"timezone\\\":\\\"GMT+0200\\\"},\\\"originalTimestamp\\\":\\\"2025-07-21T03:00:55.979Z\\\",\\\"messageId\\\":\\\"e8758d29-8ea8-464d-aeac-a790fbc3e468\\\",\\\"userId\\\":\\\"u6107847\\\",\\\"anonymousId\\\":\\\"3df59bb7-8a4e-4e28-9f33-fbb322e8bcea\\\",\\\"integrations\\\":{\\\"Google Analytics 4 (GA4)\\\":{\\\"clientId\\\":\\\"1475957717.1753066856\\\",\\\"sessionId\\\":\\\"1753066855\\\",\\\"sessionNumber\\\":1},\\\"All\\\":false,\\\"Mixpanel\\\":true},\\\"sentAt\\\":\\\"2025-07-21T03:00:55.980Z\\\"}},\\\"attemptNumber\\\":0,\\\"time\\\":1753066855980,\\\"type\\\":\\\"Single\\\"},\\\"35e1ec57-d33b-446d-b48d-9acbc5d980a5\\\":{\\\"item\\\":{\\\"url\\\":\\\"https://events.analytics.hatech.dev/v1/page\\\",\\\"headers\\\":{\\\"AnonymousId\\\":\\\"M2RmNTliYjctOGE0ZS00ZTI4LTlmMzMtZmJiMzIyZThiY2Vh\\\"},\\\"event\\\":{\\\"properties\\\":{\\\"kamernetApp\\\":\\\"next\\\",\\\"language\\\":\\\"English\\\",\\\"name\\\":\\\"Other\\\",\\\"category\\\":\\\"Other\\\",\\\"path\\\":\\\"/en\\\",\\\"referrer\\\":\\\"https://id.kamernet.nl/\\\",\\\"referring_domain\\\":\\\"id.kamernet.nl\\\",\\\"search\\\":\\\"?signedin=true\\\",\\\"title\\\":\\\"Rent a room, apartment or studio | Kamernet\\\",\\\"url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"tab_url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"initial_referrer\\\":\\\"https://kamernet.nl/\\\",\\\"initial_referring_domain\\\":\\\"kamernet.nl\\\"},\\\"name\\\":\\\"Other\\\",\\\"category\\\":\\\"Other\\\",\\\"type\\\":\\\"page\\\",\\\"channel\\\":\\\"web\\\",\\\"context\\\":{\\\"traits\\\":{\\\"source\\\":\\\"Direct\\\",\\\"currentSource\\\":\\\"Direct\\\",\\\"path\\\":\\\"/en\\\"},\\\"sessionId\\\":1753066849937,\\\"consentManagement\\\":{\\\"deniedConsentIds\\\":[\\\"C0002\\\",\\\"C0003\\\",\\\"C0004\\\",\\\"C0005\\\"],\\\"allowedConsentIds\\\":[\\\"C0001\\\"],\\\"provider\\\":\\\"oneTrust\\\",\\\"resolutionStrategy\\\":\\\"and\\\"},\\\"app\\\":{\\\"name\\\":\\\"RudderLabs JavaScript SDK\\\",\\\"namespace\\\":\\\"com.rudderlabs.javascript\\\",\\\"version\\\":\\\"3.11.13\\\",\\\"installType\\\":\\\"npm\\\"},\\\"library\\\":{\\\"name\\\":\\\"RudderLabs JavaScript SDK\\\",\\\"version\\\":\\\"3.11.13\\\"},\\\"userAgent\\\":\\\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\\\",\\\"os\\\":{\\\"name\\\":\\\"\\\",\\\"version\\\":\\\"\\\"},\\\"locale\\\":\\\"en-US\\\",\\\"screen\\\":{\\\"width\\\":1280,\\\"height\\\":720,\\\"density\\\":1,\\\"innerWidth\\\":1280,\\\"innerHeight\\\":720},\\\"campaign\\\":{},\\\"page\\\":{\\\"path\\\":\\\"/en\\\",\\\"referrer\\\":\\\"https://id.kamernet.nl/\\\",\\\"referring_domain\\\":\\\"id.kamernet.nl\\\",\\\"search\\\":\\\"?signedin=true\\\",\\\"title\\\":\\\"Rent a room, apartment or studio | Kamernet\\\",\\\"url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"tab_url\\\":\\\"https://kamernet.nl/en?signedin=true\\\",\\\"initial_referrer\\\":\\\"https://kamernet.nl/\\\",\\\"initial_referring_domain\\\":\\\"kamernet.nl\\\"},\\\"timezone\\\":\\\"GMT+0200\\\"},\\\"originalTimestamp\\\":\\\"2025-07-21T03:00:55.987Z\\\",\\\"messageId\\\":\\\"96f2edd3-3a04-4638-94d1-46bd137247e2\\\",\\\"userId\\\":\\\"u6107847\\\",\\\"anonymousId\\\":\\\"3df59bb7-8a4e-4e28-9f33-fbb322e8bcea\\\",\\\"event\\\":null,\\\"integrations\\\":{\\\"Google Analytics 4 (GA4)\\\":{\\\"clientId\\\":\\\"1475957717.1753066856\\\",\\\"sessionId\\\":\\\"1753066855\\\",\\\"sessionNumber\\\":1},\\\"Mixpanel\\\":false},\\\"sentAt\\\":\\\"2025-07-21T03:00:55.987Z\\\"}},\\\"attemptNumber\\\":0,\\\"time\\\":1753066855988,\\\"type\\\":\\\"Single\\\"}}\""
+        },
+        {
+          "name": "rudder_2Asolrw3BDcuq2ThOwSad88MJEY.35f9b465-768c-4911-a2e9-04da0f211790.ack",
+          "value": "\"1753066855749\""
+        },
+        {
+          "name": "__mpq_a35ca7b30180789f75ad8610d4a9c8a4_pp",
+          "value": "[{\"id\":\"w8k6wz3fgtc9r4xt\",\"flushAfter\":1753066865972,\"payload\":{\"$set_once\":{\"$initial_referrer\":\"https://id.kamernet.nl/\",\"$initial_referring_domain\":\"id.kamernet.nl\"},\"$token\":\"a35ca7b30180789f75ad8610d4a9c8a4\",\"$distinct_id\":\"u6107847\",\"$device_id\":\"bea2dccf-f857-486c-a24c-3368aa937bce\",\"$user_id\":\"u6107847\"}}]"
+        },
+        {
+          "name": "km-affiliate-tracking",
+          "value": "{\"utmSource\":\"\",\"transactionId\":\"\",\"expirationDate\":\"2025-08-20T03:00:48.965Z\",\"hasSentPostback\":false}"
+        },
+        {
+          "name": "rudder_2Asolrw3BDcuq2ThOwSad88MJEY.35f9b465-768c-4911-a2e9-04da0f211790.batchQueue",
+          "value": "\"[]\""
+        },
+        {
+          "name": "__mpq_a35ca7b30180789f75ad8610d4a9c8a4_ev",
+          "value": "[{\"id\":\"l9y4lode1xc33osv\",\"flushAfter\":1753066865964,\"payload\":{\"event\":\"Experiment started\",\"properties\":{\"$os\":\"Linux\",\"$browser\":\"Chrome\",\"$referrer\":\"https://id.kamernet.nl/\",\"$referring_domain\":\"id.kamernet.nl\",\"$current_url\":\"https://kamernet.nl/en?signedin=true\",\"$browser_version\":139,\"$screen_height\":720,\"$screen_width\":1280,\"mp_lib\":\"Rudderstack: web\",\"$lib_version\":\"2.67.0\",\"$insert_id\":\"7lnpoj97cmtbjju6\",\"time\":1753066855.963,\"distinct_id\":\"$device:bea2dccf-f857-486c-a24c-3368aa937bce\",\"$device_id\":\"bea2dccf-f857-486c-a24c-3368aa937bce\",\"$initial_referrer\":\"https://id.kamernet.nl/\",\"$initial_referring_domain\":\"id.kamernet.nl\",\"Experiment name\":\"Subscribe CTA in Menu\",\"variant\":\"B\",\"token\":\"a35ca7b30180789f75ad8610d4a9c8a4\"}}},{\"id\":\"t2lh6seekd3n4qbu\",\"flushAfter\":1753066865986,\"payload\":{\"event\":\"PageViewed\",\"properties\":{\"$os\":\"Linux\",\"$browser\":\"Chrome\",\"$referrer\":\"https://id.kamernet.nl/\",\"$referring_domain\":\"id.kamernet.nl\",\"$current_url\":\"https://kamernet.nl/en?signedin=true\",\"$browser_version\":139,\"$screen_height\":720,\"$screen_width\":1280,\"mp_lib\":\"Rudderstack: web\",\"$lib_version\":\"2.67.0\",\"$insert_id\":\"i0t70zpjxufyczcv\",\"time\":1753066855.986,\"distinct_id\":\"u6107847\",\"$device_id\":\"bea2dccf-f857-486c-a24c-3368aa937bce\",\"$initial_referrer\":\"https://id.kamernet.nl/\",\"$initial_referring_domain\":\"id.kamernet.nl\",\"$user_id\":\"u6107847\",\"source\":\"Direct\",\"currentSource\":\"Direct\",\"path\":\"/en\",\"kamernetApp\":\"next\",\"language\":\"English\",\"token\":\"a35ca7b30180789f75ad8610d4a9c8a4\"}}}]"
+        },
+        {
+          "name": "__mpq_a35ca7b30180789f75ad8610d4a9c8a4_pp:Y",
+          "value": "1753066855978|0.2523700405350683"
+        },
+        {
+          "name": "__mpq_a35ca7b30180789f75ad8610d4a9c8a4_pp:X",
+          "value": "1753066855979|0.204461494439534"
+        }
+      ]
+    },
+    {
+      "origin": "https://id.kamernet.nl",
+      "localStorage": [
+        {
+          "name": "rudder_2Asolrw3BDcuq2ThOwSad88MJEY.924424ae-94d5-469c-adea-fce7bd9203d0.queue",
+          "value": "\"[]\""
+        },
+        {
+          "name": "rudder_2Asolrw3BDcuq2ThOwSad88MJEY.924424ae-94d5-469c-adea-fce7bd9203d0.ack",
+          "value": "\"1753066854950\""
+        },
+        {
+          "name": "rudder_2Asolrw3BDcuq2ThOwSad88MJEY.924424ae-94d5-469c-adea-fce7bd9203d0.inProgress",
+          "value": "\"{}\""
+        },
+        {
+          "name": "__mpq_a35ca7b30180789f75ad8610d4a9c8a4_ev",
+          "value": "[{\"id\":\"zcgazdb2oxbobj4l\",\"flushAfter\":1753066860325,\"payload\":{\"event\":\"Loaded a Page\",\"properties\":{\"$os\":\"Linux\",\"$browser\":\"Chrome\",\"$referrer\":\"https://kamernet.nl/\",\"$referring_domain\":\"kamernet.nl\",\"$current_url\":\"https://id.kamernet.nl/login?authRequestID=254afdf3-27d8-4347-9b7d-ad50729c027c&prevUrl=https%3A%2F%2Fkamernet.nl%2Fen&source=navbar&target=tenant\",\"$browser_version\":139,\"$screen_height\":720,\"$screen_width\":1280,\"mp_lib\":\"Rudderstack: web\",\"$lib_version\":\"2.67.0\",\"$insert_id\":\"tkub2uir642dxt82\",\"time\":1753066850.324,\"distinct_id\":\"$device:0923705e-8254-425d-9ccd-45014dadf4ae\",\"$device_id\":\"0923705e-8254-425d-9ccd-45014dadf4ae\",\"$initial_referrer\":\"https://kamernet.nl/\",\"$initial_referring_domain\":\"kamernet.nl\",\"__app\":\"idp-web\",\"name\":\"login\",\"category\":\"Auth\",\"path\":\"/login\",\"referrer\":\"https://kamernet.nl/\",\"referring_domain\":\"kamernet.nl\",\"search\":\"?authRequestID=254afdf3-27d8-4347-9b7d-ad50729c027c&prevUrl=https%3A%2F%2Fkamernet.nl%2Fen&source=navbar&target=tenant\",\"title\":\"Kamernet | Log in\",\"url\":\"https://id.kamernet.nl/login?authRequestID=254afdf3-27d8-4347-9b7d-ad50729c027c&prevUrl=https%3A%2F%2Fkamernet.nl%2Fen&source=navbar&target=tenant\",\"tab_url\":\"https://id.kamernet.nl/login?authRequestID=254afdf3-27d8-4347-9b7d-ad50729c027c&prevUrl=https%3A%2F%2Fkamernet.nl%2Fen&source=navbar&target=tenant\",\"initial_referrer\":\"https://kamernet.nl/\",\"initial_referring_domain\":\"kamernet.nl\",\"token\":\"a35ca7b30180789f75ad8610d4a9c8a4\",\"mp_sent_by_lib_version\":\"2.67.0\"}}}]"
+        },
+        {
+          "name": "_grecaptcha",
+          "value": "09ANMylNAcOy-aq3jzTiI2aszMjA1ljxWShUEmFhTXv-FdfVwzKkI94MqN3yZuqSSwfhZUD00z60kh26lqItNzJ_lPn0QC0Pd1YIbViYyJUknxWn5ZpqzJNYcy2dTZoWse"
+        },
+        {
+          "name": "rudder_2Asolrw3BDcuq2ThOwSad88MJEY.924424ae-94d5-469c-adea-fce7bd9203d0.batchQueue",
+          "value": "\"[]\""
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::d-1753066856328",
+          "value": "NzlsbWR1MTg4OWR6Mw=="
+        },
+        {
+          "name": "rc::a",
+          "value": "ZGYydmVnZndqdmky"
+        },
+        {
+          "name": "rc::f",
+          "value": "0aAJ3Gg0a6NEUWI2wSDPjHUw0z3Wahef694VX7NMIomg4C7PW6uzuXgWwLKaVi4n2So0I-JcQ"
+        }
+      ]
+    }
+  ]
+}

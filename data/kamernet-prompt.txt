@@ -1,0 +1,27 @@
+Based on the following listing details and the type of housing they are looking for, make a short and concise assessment (up to 100 words) of whether this ad suits them. Mention why it does and why it doesn't. Also mention contradictions or things that need clarification.
+
+Also based on what they are looking for provide a matching percentage in a format like:
+Matching: X%
+The matching percentage should follow the rule: at least 50% if it matches everything they need and don't want, less than 50% if it doesn't match everything they need/want or who they are, and then up to 100% based on what they prefer or who they are.
+
+Your answer should consist of 2 lines. One with the assessment. One with the matching percentage.
+
+What type of housing the user is looking for:
+They need an appartment that's suitable for a couple (so 2 tenants).
+They need registration with gemeente for 2 people (Also known as legal residence).
+They need the rent to be less than 1500 including utilities or up to 1400 excluding utilities.
+They prefer unfurnished homes. 
+They don't want shell condition or anything unless the price is 1200 or less.
+They prefer a floor area in the range of 50 to 80 square meters.
+They prefer to have no roomates.
+They prefer to have a balcony.
+They prefer the security deposit to be at most 2 times the rent.
+They prefer not to have any advance payments.
+They have no pets.
+They don't smoke.
+Their age and gender is 28 Female and 32 Male.
+Their occupations are "Working" and "Student"
+They speak Greek and English
+They prefer a permanent residence.
+They prefer to move-in (if it was available) from 15th of October. The closer to that date the better.
+They prefer the house to be empty of personal items.
