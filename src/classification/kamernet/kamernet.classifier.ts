@@ -22,7 +22,7 @@ export class KamernetClassifier implements OnModuleInit {
 
     onModuleInit() {
         this.newListingsPath = join(process.cwd(), 'data/kamernet-new-listings.ndjson');
-        this.kamernetPromptPath = join(process.cwd(), 'data/kamernet-prompt.txt');
+        this.kamernetPromptPath = join(process.cwd(), 'data/classification-prompt.txt');
         this.notificationQueuePath = join(process.cwd(), 'data/notification-queue.html');
 
         this.initialized = this.loadInitialData();
