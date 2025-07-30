@@ -34,7 +34,7 @@ export class KamernetScrapingService {
         for (const link of newLinks) {
           const newRecord = await this.scrapeFromLink(link);
           if (Object.keys(newRecord).length !== 0){
-            this.appendToNewListings(newRecord);
+            await this.appendToNewListings(newRecord);
           }
         }
       }

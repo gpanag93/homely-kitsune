@@ -5,6 +5,7 @@ Matching: X%
 The matching percentage should follow the rule: at least 50% if it matches everything they need and don't want, less than 50% if it doesn't match everything they need/want or who they are, and then up to 100% based on what they prefer or who they are.
 
 Your answer should consist of 2 lines. One with the assessment. One with the matching percentage.
+If a need or preference is not directly mentioned don't assume, instead mention it in the assessment.
 
 What type of housing the user is looking for:
 They need an appartment that's suitable for a couple (so 2 tenants).

@@ -22,7 +22,7 @@ export class KamernetClassifier implements OnModuleInit {
 
     onModuleInit() {
         this.newListingsPath = join(process.cwd(), 'data/kamernet-new-listings.ndjson');
-        this.kamernetPromptPath = join(process.cwd(), 'data/classification-prompt.txt');
+        this.kamernetPromptPath = join(process.cwd(), 'classification-prompt.txt');
         this.notificationQueuePath = join(process.cwd(), 'data/notification-queue.html');
 
         this.initialized = this.loadInitialData();
@@ -169,15 +169,16 @@ export class KamernetClassifier implements OnModuleInit {
         ].join("\n");
     }
 
-    private addToNotificationQueue(record: Record<string, any>, assessment: string | null = null): boolean {
+    private addToNotificationQueue(record: Record<string, any>, openAIreply: string | null = null): boolean {
+        let tempPath = this.notificationQueuePath + '.tmp';
         let matching: string | null = null;
-        let input: string | null = null;
-        if (assessment){
-            const match = assessment.match(/\s*Matching:\s*(\d{1,3})%\s*$/);
+        let assessment: string | null = null;
+        if (openAIreply){
+            const match = openAIreply.match(/\s*Matching:\s*(\d{1,3})%\s*$/);
 
             if (match) {
-                matching = match[1].trim()+`%`;         // Get the percentage
-                input = assessment.replace(match[0], '').trim(); // remove from original string
+                matching = match[1].trim();         // Get the percentage
+                assessment = openAIreply.replace(match[0], '').trim(); // remove from original string
             }
         }
 
@@ -193,25 +194,68 @@ export class KamernetClassifier implements OnModuleInit {
             .join(" | ")
              || 'No cost information provided';
 
+        // Do not use nested divs. Each entry should be a single div.
         const entry = `
             <div style="border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 6px;">
             <h3 style="margin-top: 0; margin-bottom: 8px;">
                 <a href="${url}" style="text-decoration: none; color: #1a73e8;">${title}</a>
             </h3>
-            <p style="margin: 4px 0;"><strong>Matching:</strong> ${matching}</p>
+            ${matching ? `<p style="margin: 4px 0;"><strong>Matching:</strong> ${matching}%</p>` : ''}
             <p style="margin: 4px 0;"><strong>Type:</strong> ${propertyType}</p>
             <p style="margin: 4px 0;"><strong>Area:</strong> ${area}</p>
             <p style="margin: 4px 0;"><strong>Available:</strong> ${availableFrom} → ${availableUntil}</p>
             <p style="margin: 8px 0;"><strong>Cost:</strong> ${cost}</p>
             ${
-                input
-                ? `<p style="margin: 8px 0; background-color: #f3f3f3; padding: 8px; border-left: 4px solid #1a73e8;"><em>${input}</em></p>`
+                assessment
+                ? 
+                `
+                <p style="margin: 8px 0;"><strong>Assessment:</strong></p>
+                <p style="margin: 8px 0; background-color: #f3f3f3; padding: 8px; border-left: 4px solid #1a73e8;"><em>${assessment}</em></p>
+                `
                 : ''
             }
             </div>
         `.trim();
 
-        fs.appendFileSync(this.notificationQueuePath, '\n' + entry, { encoding: 'utf-8' });
+        let final = entry;
+
+        // Read existing content
+        let existing = '';
+        if (fs.existsSync(this.notificationQueuePath)) {
+            existing = fs.readFileSync(this.notificationQueuePath, { encoding: 'utf-8' });
+        }
+
+        // If the file isn't empty sort the entries by matching score
+        if (existing.trim()) {
+            // Split entries by div
+            const parts = existing
+                .split('</div>')
+                .map(part => part.trim())
+                .filter(part => part.length > 0)
+                .map(part => part + '</div>');
+
+            // Helper: extract matching score from HTML block
+            const getMatchingScore = (html: string): number => {
+                const match = html.match(/<strong>Matching:<\/strong>\s*(\d{1,3})%/);
+                return match ? parseInt(match[1]) : 0;
+            };
+
+            // Insert new entry
+            parts.push(entry);
+            parts.sort((a, b) => getMatchingScore(b) - getMatchingScore(a));
+
+            // Write back full HTML
+            final = parts.join('\n\n') + '\n';
+        }
+
+        try {
+            fs.writeFileSync(tempPath, final, 'utf-8');
+            fs.renameSync(tempPath, this.notificationQueuePath);
+        } catch (err) {
+            this.logger.error(`Failed to write notification queue: ${this.notificationQueuePath}`, err);
+            captureAndLogError(this.logger, this.errorBuffer, 'Kamernet.Classifier', err);
+            return false;
+        }
 
         return true;
     }
