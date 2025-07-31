@@ -4,6 +4,7 @@
 /build
 /tmp
 
+/auth
 /data
 
 # Logs
