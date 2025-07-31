@@ -60,8 +60,23 @@ export class BackgroundService implements OnApplicationBootstrap, OnApplicationS
         this.logger.log(`Waiting ${Math.round(delayMs / 1000)}s before next cycle...`);
         await this.sleep(delayMs);
       } else {
-        // Off-hours: sleep until next 60-minute check
-        const minutesOfInactivity = Math.abs(this.timeStart - this.timeEnd) * 60;
+        // Generate a random number between 10 and 50 (inclusive)
+        const randomOffsetMinutes = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
+
+        // Target time = timeStart hour + offset in minutes
+        const targetTime = new Date();
+        targetTime.setHours(this.timeStart);
+        targetTime.setMinutes(0);
+        targetTime.setSeconds(0);
+        targetTime.setMilliseconds(0);
+        targetTime.setTime(targetTime.getTime() + randomOffsetMinutes * 60 * 1000);
+
+        // Now
+        const now = new Date();
+
+        // Difference in minutes (if target time is in the future)
+        const diffMs = targetTime.getTime() - now.getTime();
+        const minutesOfInactivity = diffMs > 0 ? Math.floor(diffMs / 60000) : 0;
         this.logger.log(`Outside active hours. Sleeping ${minutesOfInactivity} minutes...`);
         await this.sleep(minutesOfInactivity * 60 * 1000);
       }
