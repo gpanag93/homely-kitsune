@@ -80,12 +80,6 @@ export class KamernetScrapingService {
     
         this.logger.log('Login successful — saving session.');
 
-        //Make sure the auth folder exists
-        const dir = dirname(this.AUTH_PATH);
-        if (!existsSync(dir)) {
-          mkdirSync(dir, { recursive: true });
-        }
-
         await context.storageState({ path: this.AUTH_PATH });
 
         return context;
