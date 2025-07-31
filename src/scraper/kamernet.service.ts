@@ -1,8 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { chromium, BrowserContext } from 'playwright';
-import { existsSync, readFileSync, unlinkSync } from 'fs';
+import { existsSync, readFileSync, unlinkSync, mkdirSync } from 'fs';
 import { createReadStream } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
 import * as readline from 'readline';
 import {randomDelay} from '../common/utils/randomDelay';
 import { promises as fs } from 'fs';
@@ -72,9 +72,20 @@ export class KamernetScrapingService {
         await randomDelay();
         await page.getByRole('button', { name: 'Log In' }).click();
     
-        await page.getByRole('button', { name: 'Accept all' }).click();
+        const acceptButton = page.getByRole('button', { name: 'Accept all' });
+
+        if (await acceptButton.isVisible().catch(() => false)) {
+          await acceptButton.click();
+        }
     
         this.logger.log('Login successful — saving session.');
+
+        //Make sure the auth folder exists
+        const dir = dirname(this.AUTH_PATH);
+        if (!existsSync(dir)) {
+          mkdirSync(dir, { recursive: true });
+        }
+
         await context.storageState({ path: this.AUTH_PATH });
 
         return context;
