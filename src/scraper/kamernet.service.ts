@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { chromium, BrowserContext } from 'playwright';
+import { chromium, BrowserContext, Browser } from 'playwright';
 import { existsSync, readFileSync, unlinkSync, mkdirSync } from 'fs';
 import { createReadStream } from 'fs';
 import { join, dirname } from 'path';
@@ -22,10 +22,22 @@ export class KamernetScrapingService {
 
     private readonly viewedPath = join(process.cwd(), 'data', 'kamernet-viewed.ndjson');
     private readonly queuePath = join(process.cwd(), 'data', 'kamernet-new-listings.ndjson');
-  
+
+    private browser: Browser | null = null;
+
     constructor(
       private readonly errorBuffer: ErrorBufferService
     ) {}
+
+    async onModuleInit() {
+      this.browser = await chromium.launch({ headless: true });
+    }
+
+    async onModuleDestroy() {
+      if (this.browser) {
+        await this.browser.close();
+      }
+    }
 
     async scrape(): Promise<void> {
       const newLinks = await this.findNewLinks();
@@ -41,14 +53,19 @@ export class KamernetScrapingService {
     }
   
     async getContext(): Promise<BrowserContext> {
-      const browser = await chromium.launch({ headless: true });
+
+      if (!this.browser || !this.browser.isConnected()) {
+        this.logger.log('Browser not connected or closed. Launching a new browser instance...');
+        await this.browser?.close();
+        this.browser = await chromium.launch({ headless: true });
+      }
   
       if (existsSync(this.AUTH_PATH)) {
         try {
           const content = readFileSync(this.AUTH_PATH, 'utf8');
           JSON.parse(content); // throws if invalid
           this.logger.log('Loading saved session...');
-          return browser.newContext({ storageState: this.AUTH_PATH });
+          return this.browser.newContext({ storageState: this.AUTH_PATH });
         } catch (err) {
           this.logger.warn('Invalid auth file. Will log in again.');
           unlinkSync(this.AUTH_PATH);
@@ -58,7 +75,7 @@ export class KamernetScrapingService {
       this.logger.log('No session found — logging in...');
 
       try {
-        const context = await browser.newContext();
+        const context = await this.browser.newContext();
         const page = await context.newPage();
     
         await page.goto('https://kamernet.nl/en');
@@ -155,6 +172,7 @@ export class KamernetScrapingService {
 
 
       await this.pruneOldViewedLinks(allLinksSeenNow);
+      await context.close();
 
       return rentalLinks;
     }
@@ -301,6 +319,8 @@ export class KamernetScrapingService {
             idealTenant.push({ label, value });
           }
         }
+
+        await context.close();
 
         return {
           link,
