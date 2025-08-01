@@ -8,6 +8,9 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
+# Install Playwright browser binaries
+RUN npx playwright install --with-deps
+
 # Copy source files
 COPY . .
 
