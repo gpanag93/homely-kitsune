@@ -1,0 +1,28 @@
+name: Deploy to Hetzner Server
+description: Deploys the application to a Hetzner server using SSH and Docker Compose.
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+            cd /home/kitsune/projects/homely-kitsune || exit 1
+            set -e
+            git reset --hard
+            git pull origin main
+            test -f docker-compose.yml || { echo "Missing docker-compose.yml"; exit 1; }
+            docker compose down --remove-orphans
+            docker compose up --build -d
+            docker compose ps
