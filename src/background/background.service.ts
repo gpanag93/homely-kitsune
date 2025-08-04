@@ -5,6 +5,7 @@ import { ClassificationService } from '../classification/classification.service'
 import { EmailService } from '../email/email.service';
 import { ErrorBufferService } from '../monitoring/error-buffer.service';
 import { captureAndLogError } from '../monitoring/monitoring.utils';
+import { randomDelay } from 'src/common/utils/randomDelay';
 
 @Injectable()
 export class BackgroundService implements OnApplicationBootstrap, OnApplicationShutdown {
@@ -55,30 +56,21 @@ export class BackgroundService implements OnApplicationBootstrap, OnApplicationS
           captureAndLogError(this.logger, this.errorBuffer, 'BackgroundService', err);
         }
 
-        // Wait random time between 3min and 10min
-        const delayMs = this.getRandomInt(180_000, 600_000);
-        this.logger.log(`Waiting ${Math.round(delayMs / 1000)}s before next cycle...`);
-        await this.sleep(delayMs);
+        this.logger.log(`Sleeping for a random interval between 4 and 12 minutes...`);
+        await randomDelay(4*60, 12*60); 
+        
       } else {
-        // Generate a random number between 10 and 50 (inclusive)
-        const randomOffsetMinutes = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
+        const randomOffsetMinutes = Math.floor(Math.random() * (15 - 3 + 1)) + 3;
 
-        // Target time = timeStart hour + offset in minutes
         const targetTime = new Date();
-        targetTime.setHours(this.timeStart);
-        targetTime.setMinutes(0);
-        targetTime.setSeconds(0);
-        targetTime.setMilliseconds(0);
-        targetTime.setTime(targetTime.getTime() + randomOffsetMinutes * 60 * 1000);
+        targetTime.setHours(this.timeStart, randomOffsetMinutes, 0, 0); // sets h:m:s:ms at once
 
-        // Now
         const now = new Date();
-
-        // Difference in minutes (if target time is in the future)
         const diffMs = targetTime.getTime() - now.getTime();
-        const minutesOfInactivity = diffMs > 0 ? Math.floor(diffMs / 60000) : 0;
+
+        const minutesOfInactivity = Math.floor(diffMs / 60000);
         this.logger.log(`Outside active hours. Sleeping ${minutesOfInactivity} minutes...`);
-        await this.sleep(minutesOfInactivity * 60 * 1000);
+        await this.sleep(diffMs);
       }
       
     await this.emailService.sendErrorDigest(); //Runs only if there are errors
