@@ -48,6 +48,7 @@ export class KamernetScrapingService {
       if (newLinks.length > 0){
         for (const link of newLinks) {
           const newRecord = await this.scrapeFromLink(link);
+          await randomDelay(3, 5);
           if (Object.keys(newRecord).length !== 0){
             await this.appendToNewListings(newRecord);
           }
@@ -188,7 +189,7 @@ export class KamernetScrapingService {
           }
       
           pageNo++;
-          randomDelay();
+          await randomDelay(2, 5);
         }
       } finally {
         await page.close();
