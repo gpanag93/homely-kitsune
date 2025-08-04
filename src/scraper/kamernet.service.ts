@@ -1,5 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { chromium, BrowserContext, Browser } from 'playwright';
+import { BrowserContext, Browser } from 'playwright';
+import { chromium } from 'playwright-extra';
+import StealthPlugin = require('puppeteer-extra-plugin-stealth');
 import { existsSync, readFileSync, unlinkSync, mkdirSync } from 'fs';
 import { createReadStream } from 'fs';
 import { join, dirname } from 'path';
@@ -9,6 +11,7 @@ import { promises as fs } from 'fs';
 import { captureAndLogError } from '../monitoring/monitoring.utils';
 import { ErrorBufferService } from '../monitoring/error-buffer.service';
 
+chromium.use(StealthPlugin());
 
 @Injectable()
 export class KamernetScrapingService {

@@ -8,6 +8,9 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
+# Install stealth-related npm packages
+RUN npm install playwright-extra puppeteer-extra-plugin-stealth
+
 # Install Playwright browser binaries
 RUN npx playwright install --with-deps
 
