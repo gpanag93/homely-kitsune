@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { BrowserContext, Browser } from 'playwright';
+import { BrowserContext, Browser, BrowserContextOptions } from 'playwright';
 import { chromium } from 'playwright-extra';
 import StealthPlugin = require('puppeteer-extra-plugin-stealth');
 import { existsSync, readFileSync, unlinkSync, mkdirSync } from 'fs';
@@ -68,7 +68,10 @@ export class KamernetScrapingService {
           const content = readFileSync(this.AUTH_PATH, 'utf8');
           JSON.parse(content); // throws if invalid
           this.logger.log('Loading saved session...');
-          return this.browser.newContext({ storageState: this.AUTH_PATH });
+          return this.browser.newContext({
+                  ...this.getStealthContextOptions(),
+                  storageState: this.AUTH_PATH,
+                });
         } catch (err) {
           this.logger.warn('Invalid auth file. Will log in again.');
           unlinkSync(this.AUTH_PATH);
@@ -77,10 +80,12 @@ export class KamernetScrapingService {
   
       this.logger.log('No session found — logging in...');
 
+      const context = await this.browser.newContext(this.getStealthContextOptions());
+      const page = await context.newPage();
+      await page.setExtraHTTPHeaders({
+        'accept-language': 'en-US,en;q=0.9'
+      });
       try {
-        const context = await this.browser.newContext();
-        const page = await context.newPage();
-    
         await page.goto('https://kamernet.nl/en');
         await page.getByRole('button', { name: 'Log in' }).click();
         await randomDelay();
@@ -108,8 +113,19 @@ export class KamernetScrapingService {
         this.logger.error('Error getting Kamernet credentials', err);
         //Let the error propagate so it can be handled by the caller
         throw err;
+      } finally {
+        await page.close();
       }
       
+    }
+
+    private getStealthContextOptions(): BrowserContextOptions {
+      return {
+        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+        locale: 'en-US',
+        timezoneId: 'Europe/Amsterdam',
+        viewport: { width: 1366, height: 768 },
+      };
     }
   
     async findNewLinks(): Promise<string[]> {
@@ -117,58 +133,65 @@ export class KamernetScrapingService {
     
       const context = await this.getContext();
       const page = await context.newPage();
-    
+      await page.setExtraHTTPHeaders({
+        'accept-language': 'en-US,en;q=0.9',
+        'referer': `${process.env.KAMERNET_BASE_URL}/en`,
+      });
+
       const rentalLinks: string[] = [];
       const viewedLinks = await this.loadViewedLinks();
     
       let pageNo = 1;
       
       const allLinksSeenNow = new Set<string>();
-    
-      while (true) {
-        const pagedUrl = `${this.baseSearchUrl}&pageNo=${pageNo}`;
-        await page.goto(pagedUrl, { waitUntil: 'domcontentloaded' });
-    
-        this.logger.log(`Scraping page ${pageNo}`);
-    
-        const noResults = await page.$(`text="We couldn't find any results"`);
-        if (noResults) {
-          this.logger.log('No results found — stopping.');
-          break;
-        }
-    
-        const linksOnPage = await page.$$eval(
-          'a[href^="/en/for-rent/"]',
-          elements =>
-            elements
-              .map(el => el.getAttribute('href') || '')
-              .filter(href => !href.startsWith('/en/for-rent/properties'))
-        );
+      try {
+        while (true) {
+          const pagedUrl = `${this.baseSearchUrl}&pageNo=${pageNo}`;
+          await page.goto(pagedUrl, { waitUntil: 'domcontentloaded' });
+      
+          this.logger.log(`Scraping page ${pageNo}`);
+      
+          const noResults = await page.$(`text="We couldn't find any results"`);
+          if (noResults) {
+            this.logger.log('No results found — stopping.');
+            break;
+          }
+      
+          const linksOnPage = await page.$$eval(
+            'a[href^="/en/for-rent/"]',
+            elements =>
+              elements
+                .map(el => el.getAttribute('href') || '')
+                .filter(href => !href.startsWith('/en/for-rent/properties'))
+          );
 
-        for (const link of linksOnPage) {
-          allLinksSeenNow.add(link);
-        }
+          for (const link of linksOnPage) {
+            allLinksSeenNow.add(link);
+          }
 
-        // keep only links that are NOT in viewedLinks
-        const newLinks = linksOnPage.filter(link => !viewedLinks.has(link));
-    
-        rentalLinks.push(...newLinks);
-    
-        const nextButton = await page.$('button[aria-label="Go to next page"]');
-        if (!nextButton) {
-          this.logger.log('Only one page detected — stopping.');
-          break;
-        }
-    
-        const disabled = await nextButton.isDisabled();
+          // keep only links that are NOT in viewedLinks
+          const newLinks = linksOnPage.filter(link => !viewedLinks.has(link));
+      
+          rentalLinks.push(...newLinks);
+      
+          const nextButton = await page.$('button[aria-label="Go to next page"]');
+          if (!nextButton) {
+            this.logger.log('Only one page detected — stopping.');
+            break;
+          }
+      
+          const disabled = await nextButton.isDisabled();
 
-        if (disabled) {
-          this.logger.log('Last page reached — stopping.');
-          break;
+          if (disabled) {
+            this.logger.log('Last page reached — stopping.');
+            break;
+          }
+      
+          pageNo++;
+          randomDelay();
         }
-    
-        pageNo++;
-        randomDelay();
+      } finally {
+        await page.close();
       }
     
       this.logger.log(`Scraping finished — found ${rentalLinks.length} new links.`);
@@ -231,12 +254,15 @@ export class KamernetScrapingService {
     }
 
     private async scrapeFromLink(link: string): Promise<Record<string, any>>{
+      const context = await this.getContext();
+      const page = await context.newPage();
+      await page.setExtraHTTPHeaders({
+        'accept-language': 'en-US,en;q=0.9',
+        'referer': process.env.KAMERNET_SEARCH_BASE_URL+'&pageNo=1' || 'https://kamernet.nl/en/',
+      });
       try {
         const fullLink = process.env.KAMERNET_BASE_URL+link;
         this.logger.log(`Scraping from Link: ${fullLink}`);
-
-        const context = await this.getContext();
-        const page = await context.newPage();
 
         await page.goto(fullLink, { waitUntil: 'domcontentloaded', timeout: 10000, });
 
@@ -342,6 +368,8 @@ export class KamernetScrapingService {
         this.logger.error(`Error scraping link ${link}`, err);
         captureAndLogError(this.logger, this.errorBuffer, 'KamernetScrapingService', err, `Error scraping link: ${link}`);
         return {};
+      } finally {
+        await page.close();
       }
     }
 
