@@ -23,8 +23,8 @@ export class KamernetScrapingService {
     
     private readonly baseSearchUrl = process.env.KAMERNET_SEARCH_BASE_URL ?? (() => { throw new Error('KAMERNET_SEARCH_BASE_URL is missing'); })();
 
-    private readonly viewedPath = join(process.cwd(), 'data', 'kamernet-viewed.ndjson');
-    private readonly queuePath = join(process.cwd(), 'data', 'kamernet-new-listings.ndjson');
+    private readonly viewedPath = join(process.cwd(), 'data/kamernet/kamernet-viewed.ndjson');
+    private readonly queuePath = join(process.cwd(), 'data/kamernet/kamernet-new-listings.ndjson');
 
     private browser: Browser | null = null;
 

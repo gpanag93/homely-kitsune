@@ -3,8 +3,8 @@ import { join } from 'path';
 import { createReadStream } from 'fs';
 import { open, rename } from 'fs/promises';
 
-const viewedPath = join(process.cwd(), 'data', 'kamernet-viewed.ndjson');
-const queuePath = join(process.cwd(), 'data', 'kamernet-new-listings.ndjson');
+const viewedPath = join(process.cwd(), 'data/kamernet/kamernet-viewed.ndjson');
+const queuePath = join(process.cwd(), 'data/kamernet/kamernet-new-listings.ndjson');
 
 export async function moveLinkToViewed(link: string): Promise<void> {
   const tmpPath = queuePath + '.tmp';

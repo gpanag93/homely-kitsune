@@ -21,7 +21,7 @@ export class KamernetClassifier implements OnModuleInit {
     private readonly openai: OpenAI;
 
     onModuleInit() {
-        this.newListingsPath = join(process.cwd(), 'data/kamernet-new-listings.ndjson');
+        this.newListingsPath = join(process.cwd(), 'data/kamernet/kamernet-new-listings.ndjson');
         this.kamernetPromptPath = join(process.cwd(), 'classification-prompt.txt');
         this.notificationQueuePath = join(process.cwd(), 'data/notification-queue.html');
 
