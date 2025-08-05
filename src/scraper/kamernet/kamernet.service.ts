@@ -6,10 +6,10 @@ import { existsSync, readFileSync, unlinkSync, mkdirSync } from 'fs';
 import { createReadStream } from 'fs';
 import { join, dirname } from 'path';
 import * as readline from 'readline';
-import {randomDelay} from '../common/utils/randomDelay';
+import {randomDelay} from '../../common/utils/randomDelay';
 import { promises as fs } from 'fs';
-import { captureAndLogError } from '../monitoring/monitoring.utils';
-import { ErrorBufferService } from '../monitoring/error-buffer.service';
+import { captureAndLogError } from '../../monitoring/monitoring.utils';
+import { ErrorBufferService } from '../../monitoring/error-buffer.service';
 
 chromium.use(StealthPlugin());
 

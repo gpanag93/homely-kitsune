@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { KamernetScrapingService } from './kamernet.service';
+import { KamernetScrapingService } from './kamernet/kamernet.service';
 import { EmailModule } from '../email/email.module';
 import { ErrorBufferModule } from '../monitoring/error-buffer.module';
 

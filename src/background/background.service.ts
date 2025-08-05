@@ -1,6 +1,6 @@
 // background.service.ts
 import { Injectable, Logger, OnApplicationBootstrap, OnApplicationShutdown } from '@nestjs/common';
-import { KamernetScrapingService } from '../scraper/kamernet.service';
+import { KamernetScrapingService } from '../scraper/kamernet/kamernet.service';
 import { ClassificationService } from '../classification/classification.service';
 import { EmailService } from '../email/email.service';
 import { ErrorBufferService } from '../monitoring/error-buffer.service';
