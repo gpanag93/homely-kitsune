@@ -205,28 +205,49 @@ export class KamernetScrapingService {
   }
 
   private async loadViewedLinks(): Promise<Set<string>> {
-  
+      
     const seen = new Set<string>();
-  
-    if (!existsSync(this.viewedPath)) {
-      this.logger.log(`Viewed links file does not exist yet: ${this.viewedPath}`);
+    
+    if(!existsSync(this.viewedPath) && !existsSync(this.queuePath)) {
+      this.logger.log(`No viewed or queue file found.`);
       return seen;
     }
-  
-    const rl = readline.createInterface({
-      input: createReadStream(this.viewedPath),
-      crlfDelay: Infinity,
-    });
-  
-    for await (const line of rl) {
-      if (!line.trim()) continue;
-      try {
-        const obj = JSON.parse(line);
-        if (obj.link) {
-          seen.add(obj.link);
+
+    if (existsSync(this.viewedPath)) {
+      const viewedRL = readline.createInterface({
+        input: createReadStream(this.viewedPath),
+        crlfDelay: Infinity,
+      });
+
+      for await (const line of viewedRL) {
+        if (!line.trim()) continue;
+        try {
+          const obj = JSON.parse(line);
+          if (obj.link) {
+            seen.add(obj.link);
+          }
+        } catch (err) {
+          this.logger.warn(`Viewed file Parser: Failed to parse line: ${line}`);
         }
-      } catch (err) {
-        this.logger.warn(`Failed to parse line: ${line}`);
+      }
+    }
+
+    if (existsSync(this.queuePath)) {
+      const newListingsRL = readline.createInterface({
+        input: createReadStream(this.queuePath),
+        crlfDelay: Infinity,
+      });
+
+      for await (const line of newListingsRL) {
+        if (!line.trim()) continue;
+        try {
+          const obj = JSON.parse(line);
+          if (obj.link) {
+            seen.add(obj.link);
+          }
+        } catch (err) {
+          this.logger.warn(`Queue file Parser: Failed to parse line: ${line}`);
+        }
       }
     }
   
