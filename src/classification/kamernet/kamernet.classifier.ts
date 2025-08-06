@@ -16,8 +16,8 @@ export class KamernetClassifier implements OnModuleInit {
 
     private newListingsPath: string;
     private newRecords: Set<Record<string, any>>;
-    private kamernetPromptPath: string;
-    private kamernetPrompt: string;
+    private promptPath: string;
+    private prompt: string;
     private notificationQueuePath: string;
     private viewedPath: string;
 
@@ -25,7 +25,7 @@ export class KamernetClassifier implements OnModuleInit {
 
     onModuleInit() {
         this.newListingsPath = join(process.cwd(), 'data/kamernet/kamernet-new-listings.ndjson');
-        this.kamernetPromptPath = join(process.cwd(), 'classification-prompt.txt');
+        this.promptPath = join(process.cwd(), 'classification-prompt.txt');
         this.notificationQueuePath = join(process.cwd(), 'data/notification-queue.html');
         this.viewedPath = join(process.cwd(), 'data/kamernet/kamernet-viewed.ndjson');
 
@@ -41,17 +41,17 @@ export class KamernetClassifier implements OnModuleInit {
             fs.writeFileSync(this.notificationQueuePath, '', { encoding: 'utf-8' });
         }
 
-        if (!fs.existsSync(this.kamernetPromptPath)) {
-            Logger.warn(`Kamernet prompt file not found: ${this.kamernetPromptPath}`);
+        if (!fs.existsSync(this.promptPath)) {
+            Logger.warn(`Kamernet prompt file not found: ${this.promptPath}`);
             return false;
         }
 
-        const promptContent = fs.readFileSync(this.kamernetPromptPath, 'utf-8').trim();
+        const promptContent = fs.readFileSync(this.promptPath, 'utf-8').trim();
         if (!promptContent) {
-            Logger.warn(`Kamernet prompt file is empty: ${this.kamernetPromptPath}`);
+            Logger.warn(`Kamernet prompt file is empty: ${this.promptPath}`);
             return false;
         }
-        this.kamernetPrompt = promptContent;
+        this.prompt = promptContent;
 
         return true;
     }
@@ -138,7 +138,7 @@ export class KamernetClassifier implements OnModuleInit {
         const response = await this.openai.chat.completions.create({
             model: 'gpt-4o',
             messages: [
-              { role: 'system', content: this.kamernetPrompt },
+              { role: 'system', content: this.prompt },
               { role: 'user', content: listingTxt },
             ],
           });
