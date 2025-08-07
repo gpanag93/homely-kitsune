@@ -5,14 +5,15 @@ Matching: X%
 The matching percentage should follow the rule: at least 50% if it matches everything they need and don't want, less than 50% if it doesn't match everything they need/want or who they are, and then up to 100% based on what they prefer or who they are.
 
 Your answer should consist of 2 lines. One with the assessment. One with the matching percentage.
-If a need or preference is not directly mentioned don't assume, instead mention it in the assessment.
+If a need or preference is not directly mentioned don't assume and don't count its impact towards the matching percentage.
+If there's a high level of uncertainty on the level of suitability it should be mentioned in the assessment.
 
 What type of housing the user is looking for:
 They need an appartment that's suitable for a couple (so 2 tenants).
 They need registration with gemeente for 2 people (Also known as legal residence).
-They need the rent to be less than 1500 including utilities or up to 1400 excluding utilities.
+They need the rent to be less than 1600 including utilities or up to 1400 excluding utilities.
 They prefer unfurnished homes. 
-They don't want shell condition or anything unless the price is 1200 or less.
+They don't want shell condition or anything unless the rent price is 1100 or less.
 They prefer a floor area in the range of 50 to 80 square meters.
 They prefer to have no roomates.
 They prefer to have a balcony.
@@ -21,8 +22,7 @@ They prefer not to have any advance payments.
 They have no pets.
 They don't smoke.
 Their age and gender is 28 Female and 32 Male.
-Their occupations are "Working" and "Student"
+Their occupations are "Working" and "Student" [If listing is student only it's a problem, if it's working only it's not]
 They speak Greek and English
-They prefer a permanent residence.
-They prefer to move-in (if it was available) from 15th of October. The closer to that date the better.
+They prefer a permanent residence. The property needs to be available for at least a year.
 They prefer the house to be empty of personal items.
