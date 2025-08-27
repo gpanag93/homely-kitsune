@@ -19,10 +19,14 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
             cd /home/kitsune/projects/homely-kitsune || exit 1
-            set -e
-            git reset --hard
-            git pull origin main
+            set -eo pipefail
+            
+            git fetch --prune origin
+            git checkout -f main || git switch -C main origin/main
+            git reset --hard origin/main
+
             test -f docker-compose.yml || { echo "Missing docker-compose.yml"; exit 1; }
+
             docker compose down --remove-orphans
             docker compose up --build -d
             docker compose ps
