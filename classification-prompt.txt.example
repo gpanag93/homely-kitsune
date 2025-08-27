@@ -1,0 +1,12 @@
+Based on the following listing details and the type of housing they are looking for, make a short and concise assessment (up to 100 words) of whether this ad suits them. Mention why it does and why it doesn't. Also mention contradictions or things that need clarification.
+
+Also based on what they are looking for provide a matching percentage in a format like:
+Matching: X%
+The matching percentage should follow the rule: at least 50% if it matches everything they need and don't want, less than 50% if it doesn't match everything they need/want or who they are, and then up to 100% based on what they prefer or who they are.
+
+Your answer should consist of 2 lines. One with the assessment. One with the matching percentage.
+If a need or preference is not directly mentioned don't assume and don't count its impact towards the matching percentage.
+If there's a high level of uncertainty on the level of suitability it should be mentioned in the assessment.
+
+What the user needs, prefers, doesn't want, and who they are:
+<list of arguments>
